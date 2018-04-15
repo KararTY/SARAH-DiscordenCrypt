@@ -8,9 +8,21 @@
   <script src="https://unpkg.com/hyperhtml@2.6.0/min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.min.js"></script>
 </head>
-  <body></body>
+  <body>
+    <div id="sk"></div>
+    <div id="pk"></div>
+  </body>
   <!-- Ready to go! -->
-  <script src="./index.js"></script>
+  <script src="./skbox.js"></script>
+  <script src="./pkbox.js"></script>
+  <script>
+    window.sodium = {
+      onload: function (sodium) {
+        skBox(sodium)
+        pkBox(sodium)
+      }
+    }
+  </script>
   <!-- libsodium onload event BEFORE libsodium init -->
   <script src="./sodium.js"></script>
 </html>
